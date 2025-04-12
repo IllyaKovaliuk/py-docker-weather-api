@@ -4,12 +4,12 @@ import os
 
 
 load_dotenv()
-base_url = "http://api.weatherapi.com/v1"
+BASE_URL = "http://api.weatherapi.com/v1"
 
 
 def get_weather(city: str) -> None:
     api_key = os.getenv("api_key")
-    url = f"{base_url}/current.json?key={api_key}&q={city}"
+    url = f"{BASE_URL}/current.json?key={api_key}&q={city}"
     response = requests.get(url)
 
     if response.status_code == 200:
